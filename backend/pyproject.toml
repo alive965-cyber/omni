@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnipulse-mbs"
+version = "2.0.0"
+description = "OmniPulse MBS v2.0: Trimodal Behavioral, Acoustic, Psycholinguistic & rPPG Physiological Telemetry Platform with 3-Tier Stratified RAG & Theory-of-Mind Synthesis"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110,<1",
+    "pydantic>=2.6,<3",
+    "uvicorn[standard]>=0.27,<1",
+    "python-multipart>=0.0.9",
+    "python-dotenv>=1.0,<2",
+    "numpy>=1.26",
+    "scipy>=1.12",
+]
+
+[project.optional-dependencies]
+signals = ["numpy>=1.26", "scipy>=1.12", "opencv-python>=4.9", "mediapipe>=0.10"]
+documents = ["PyMuPDF>=1.24", "pypdf>=4.0", "python-docx>=1.1", "reportlab>=4.0", "PyYAML>=6.0"]
+production = ["sqlalchemy>=2.0", "psycopg[binary]>=3.1", "redis>=5", "celery>=5.3", "qdrant-client>=1.9", "minio>=7.2"]
+ai = ["google-genai>=1.0"]
+retrieval = ["qdrant-client[fastembed]>=1.14.2,<2", "PyYAML>=6.0"]
+inference = ["groq>=0.11,<2", "opensmile>=2.5"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]

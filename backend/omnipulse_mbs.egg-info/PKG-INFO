@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: omnipulse-mbs
+Version: 2.0.0
+Summary: OmniPulse MBS v2.0: Trimodal Behavioral, Acoustic, Psycholinguistic & rPPG Physiological Telemetry Platform with 3-Tier Stratified RAG & Theory-of-Mind Synthesis
+Requires-Python: >=3.11
+Requires-Dist: fastapi<1,>=0.110
+Requires-Dist: pydantic<3,>=2.6
+Requires-Dist: uvicorn[standard]<1,>=0.27
+Requires-Dist: python-multipart>=0.0.9
+Requires-Dist: python-dotenv<2,>=1.0
+Requires-Dist: numpy>=1.26
+Requires-Dist: scipy>=1.12
+Provides-Extra: signals
+Requires-Dist: numpy>=1.26; extra == "signals"
+Requires-Dist: scipy>=1.12; extra == "signals"
+Requires-Dist: opencv-python>=4.9; extra == "signals"
+Requires-Dist: mediapipe>=0.10; extra == "signals"
+Provides-Extra: documents
+Requires-Dist: PyMuPDF>=1.24; extra == "documents"
+Requires-Dist: pypdf>=4.0; extra == "documents"
+Requires-Dist: python-docx>=1.1; extra == "documents"
+Requires-Dist: reportlab>=4.0; extra == "documents"
+Requires-Dist: PyYAML>=6.0; extra == "documents"
+Provides-Extra: production
+Requires-Dist: sqlalchemy>=2.0; extra == "production"
+Requires-Dist: psycopg[binary]>=3.1; extra == "production"
+Requires-Dist: redis>=5; extra == "production"
+Requires-Dist: celery>=5.3; extra == "production"
+Requires-Dist: qdrant-client>=1.9; extra == "production"
+Requires-Dist: minio>=7.2; extra == "production"
+Provides-Extra: ai
+Requires-Dist: google-genai>=1.0; extra == "ai"
+Provides-Extra: retrieval
+Requires-Dist: qdrant-client[fastembed]<2,>=1.14.2; extra == "retrieval"
+Requires-Dist: PyYAML>=6.0; extra == "retrieval"
+Provides-Extra: inference
+Requires-Dist: groq<2,>=0.11; extra == "inference"
+Requires-Dist: opensmile>=2.5; extra == "inference"
